@@ -11,6 +11,7 @@ int main() {
 
     cout << "두 번째 숫자를 입력하세요: ";
     cin >> secondNumber;
+    cout << endl;
 
     try {
         unsigned long long result =
