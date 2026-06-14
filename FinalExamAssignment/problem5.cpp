@@ -12,21 +12,24 @@ public:
 class CardPayment : public Payment {
 public:
     void pay(int amount) override {
-        cout << "[카드 결제]" << amount << "원을 카드로 결제합니다." << endl;
+        cout << "[카드 결제]" << endl;
+        cout << amount << "원을 카드로 결제합니다." << endl;
     }
 };
 
 class CashPayment : public Payment {
 public:
     void pay(int amount) override {
-        cout << "[현금 결제]" << amount << "원을 현금으로 결제합니다." << endl;
+        cout << "[현금 결제]" << endl;
+        cout << amount << "원을 현금으로 결제합니다." << endl;
     }
 };
 
 class MobilePayment : public Payment {
 public:
     void pay(int amount) override {
-        cout << "[모바일 결제]" << amount << "원을 모바일 간편 결제로 결제합니다." << endl;
+        cout << "[모바일 결제]" << endl;
+        cout << amount << "원을 모바일 간편 결제로 결제합니다." << endl;
     }
 };
 
@@ -39,6 +42,7 @@ int main() {
         cin >> paymentMethod;
 
         if (paymentMethod == 0) {
+            cout << endl;
             cout << "프로그램을 종료합니다." << endl;
             break;
         }
@@ -62,6 +66,7 @@ int main() {
 
         cout << "결제 금액 입력: ";
         cin >> amount;
+        cout << endl;
 
         try {
             if (amount <= 0)
@@ -73,6 +78,7 @@ int main() {
         }
 
         delete payment;
+        cout << endl;
     }
 
     return 0;
