@@ -24,7 +24,8 @@ public:
     }
 
     void make() override {
-        cout << "[아메리카노 제조]원두를 추출하고 물을 추가합니다." << endl;
+        cout << "[아메리카노 제조]" << endl;
+        cout << "원두를 추출하고 물을 추가합니다." << endl;
     }
 };
 
@@ -39,7 +40,8 @@ public:
     }
 
     void make() override {
-        cout << "[라떼 제조]원두를 추출하고 우유를 추가합니다." << endl;
+        cout << "[라떼 제조]" << endl;
+        cout << "원두를 추출하고 우유를 추가합니다." << endl;
     }
 };
 
@@ -54,7 +56,8 @@ public:
     }
 
     void make() override {
-        cout << "[에이드 제조]탄산수와 시럽을 섞습니다." << endl;
+        cout << "[에이드 제조]" << endl;
+        cout << "탄산수와 시럽을 섞습니다." << endl;
     }
 };
 
@@ -69,14 +72,16 @@ public:
 class CardPayment : public Payment {
 public:
     void pay(int amount) override {
-        cout << "[카드 결제]" << amount << "원을 카드로 결제합니다." << endl;
+        cout << "[카드 결제]" << endl;
+        cout << amount << "원을 카드로 결제합니다." << endl;
     }
 };
 
 class CashPayment : public Payment {
 public:
     void pay(int amount) override {
-        cout << "[현금 결제]" << amount << "원을 현금으로 결제합니다." << endl;
+        cout << "[현금 결제]" << endl;
+        cout << amount << "원을 현금으로 결제합니다." << endl;
     }
 };
 
@@ -115,6 +120,7 @@ int main() {
         cin >> beverageNumber;
 
         if (beverageNumber == 0) {
+            cout << endl;
             cout << "총 주문 건수: " << CafeOrder::getTotalOrderCount() << endl;
             cout << "프로그램을 종료합니다." << endl;
             break;
@@ -142,12 +148,15 @@ int main() {
             cout << "수량 입력: ";
             cin >> quantity;
 
-            if (quantity <= 0)
+            if (quantity <= 0) {
+                cout << endl;
                 throw quantity;
+            }
 
             int paymentMethod;
             cout << "결제 방식 선택 {1.카드, 2.현금}: ";
             cin >> paymentMethod;
+            cout << endl;
 
             Payment* payment = nullptr;
 
@@ -169,7 +178,9 @@ int main() {
                 throw static_cast<float>(totalAmount - 100000);
 
             beverage->make();
+            cout << endl;
             payment->pay(totalAmount);
+            cout << endl;
 
             CafeOrder::completeOrder();
 
@@ -183,6 +194,8 @@ int main() {
         } catch (...) {
             cout << "알 수 없는 오류가 발생했습니다." << endl;
         }
+
+        cout << endl;
     }
 
     return 0;
