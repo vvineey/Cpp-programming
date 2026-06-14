@@ -82,6 +82,7 @@ int main() {
     while (true) {
         cout << "엔진 번호를 입력하세요 {1.가솔린, 2.디젤, 3.전기, 0.종료}: ";
         cin >> engineNumber;
+        cout << endl;
 
         switch (engineNumber) {
             case 1:
@@ -103,6 +104,7 @@ int main() {
 
         car.describeCar();
         car.driveCar();
+        cout << endl;
     }
 
     return 0;
