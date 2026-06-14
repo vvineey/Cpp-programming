@@ -61,6 +61,7 @@ int main() {
 
     cout << "[첫 번째 몬스터]" << endl;
     firstMonster.printInfo();
+    cout << endl;
 
     cout << "[두 번째 몬스터]" << endl;
     secondMonster.printInfo();
