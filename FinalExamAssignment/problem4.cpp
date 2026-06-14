@@ -74,11 +74,13 @@ int main() {
     characters[2] = new Wizard();
 
     cout << "===== 캐릭터 공격 테스트 =====" << endl;
+    cout << endl;
 
     for (int i = 0; i < 3; i++) {
         characters[i]->printInfo();
         characters[i]->attack();
         characters[i]->specialAttack();
+        cout << endl;
     }
 
     for (int i = 0; i < 3; i++)
